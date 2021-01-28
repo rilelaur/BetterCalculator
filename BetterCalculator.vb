@@ -6,6 +6,10 @@
 
 Option Strict On
 Option Explicit On
+
+'Write a program that asks the user for two numbers then gives them the option to choose
+'an arithmetic operation from a menu list. Then the result Is displayed to the user on the console. 
+
 Module BetterCalculator
 
     Sub Main()
