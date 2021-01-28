@@ -2,7 +2,7 @@
 'RCET0265
 'Spring 2021
 'Better Calculator
-'
+'https://github.com/rilelaur/BetterCalculator.git
 
 Option Strict On
 Option Explicit On
@@ -18,8 +18,14 @@ Module BetterCalculator
         Dim programRun As Boolean = True
         Dim problem As Boolean = True
 
+        'Outer while loop keeps the program running until the user ends it
         While programRun = True And userinput <> "Q" And userinput <> "q"
+
+            'Tells the user they can enter Q to quit
             Console.WriteLine("Enter ""Q"" at any time to quit" & vbCrLf)
+
+            'Prompts the user to enter a number and makes sure that they enter a number and haven't quit.
+            'If the user didn't enter a number then it will prompt the user again.
             While problem = True And userinput <> "Q" And userinput <> "q"
                 Console.WriteLine("Choose a Number:")
                 Try
@@ -34,6 +40,8 @@ Module BetterCalculator
 
             problem = True
 
+            'Prompts the user to enter a number and makes sure that they enter a number and haven't quit.
+            'If the user didn't enter a number then it will prompt the user again.
             While problem = True And userinput <> "Q" And userinput <> "q"
                 Console.WriteLine("Choose a Number:")
                 Try
@@ -46,6 +54,7 @@ Module BetterCalculator
                 End Try
             End While
 
+            'If the user has entered Q the program will clear and tell them to have a nice day and to press enter to exit
             If userinput = "Q" Or userinput = "q" Then
                 Console.Clear()
                 Console.WriteLine("Have a nice day" & vbCrLf & "Press enter to close this window")
@@ -54,6 +63,8 @@ Module BetterCalculator
 
             problem = True
 
+            'Prompts the user to enter a number from 1 to 4 and makes sure that they enter a number and haven't quit.
+            'If they didn't enter 1, 2, 3, or 4 it will prompt the user again
             While problem = True And userinput <> "Q" And userinput <> "q"
                 Console.WriteLine("Choose one of the following options:" & vbCrLf)
                 Console.WriteLine("1. Add" & vbCrLf & "2. Subtract" & vbCrLf & "3. Multiply" & vbCrLf & "4. Divide")
@@ -70,14 +81,17 @@ Module BetterCalculator
                 End Try
             End While
 
+            'clears the math function
             Console.Clear()
 
+            'If the user has entered Q the program will clear and tell them to have a nice day and to press enter to exit
             If userinput = "Q" Or userinput = "q" Then
                 Console.Clear()
                 Console.WriteLine("Have a nice day." & vbCrLf & "Press enter to close this window")
                 programRun = False
             End If
 
+            'If the user chose 1, 2, 3, or 4 the program will do the math associated with what they chose
             If mathFunction = "1" Then
                 finalAnswer = firstNumber + secondNumber
                 Console.WriteLine($"{firstNumber} + {secondNumber} = {finalAnswer}" & vbCrLf)
@@ -92,12 +106,14 @@ Module BetterCalculator
                 Console.WriteLine($"{firstNumber} / {secondNumber} = {finalAnswer}" & vbCrLf)
             End If
 
+            'If the user has entered Q the program will clear and tell them to have a nice day and to press enter to exit
             If userinput = "Q" Or userinput = "q" Then
                 Console.Clear()
                 Console.WriteLine("Have a nice day." & vbCrLf & "Press enter to close this window")
                 programRun = False
             End If
 
+            'Turns problem true if the user hasn't quit and will run the program again.
             problem = True
         End While
 
